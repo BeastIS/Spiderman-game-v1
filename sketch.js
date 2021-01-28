@@ -57,7 +57,7 @@ function preload() {
   drop = loadImage("images/drop.png");
   webImg = loadImage("images/web.png");
 
-  // song = loadSound("sounds/song.mp4");
+  song = loadSound("sounds/song.mp4");
   shoot = loadSound("sounds/shoot.mp3");
   ding = loadSound("sounds/ding.mp3");
 
@@ -66,7 +66,7 @@ function preload() {
 
 function setup() {
   createCanvas(600, 400);
-  // song.loop();
+  song.loop();
   loc = createVector(200, 60);
   vel = createVector(0, 0);
   gravity = createVector(0, 0.01);
@@ -163,7 +163,7 @@ function drawGame() {
 
   // Draw drops + web on canvas and activate collision detection
   for (let d of myDrops) {
-    console.log(d);
+    // console.log(d);
 
     // Update drops to fall from a point
     d.update();
@@ -183,7 +183,7 @@ function drawGame() {
         w.hasNotHit = false;
       } else {
         // Keep a record of all the drops that were NOT hit.
-        console.log("not hit");
+        // console.log('not hit');
         //dropsToKeep.push(d);
       }
       // Update web to move upward at 2 speed
@@ -197,7 +197,7 @@ function drawGame() {
   // myDrops = dropsToKeep;
 
   for (let i = myDrops.length - 1; i >= 0; i--) {
-    console.log(i);
+    // console.log(i);
     if (myDrops[i].wasHit) {
       myDrops.splice(i, 1);
     }
